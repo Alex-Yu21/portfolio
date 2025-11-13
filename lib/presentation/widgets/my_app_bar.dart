@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/config/theme/app_sizes.dart';
 import 'package:portfolio/config/theme/extensions.dart';
+import 'package:portfolio/presentation/widgets/app_bar_drawer.dart';
 
 class MyAppBar extends StatelessWidget {
   const MyAppBar({super.key});
@@ -22,7 +23,7 @@ class MyAppBar extends StatelessWidget {
             if (context.isDesktop) AppMenus(),
             Spacer(),
             ThemeToggle(),
-            if (!context.isDesktop) Icon(Icons.menu),
+            if (!context.isDesktop) AppBarDrawer(),
           ],
         ),
       ),
