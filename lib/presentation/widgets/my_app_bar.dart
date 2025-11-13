@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/config/theme/app_sizes.dart';
 import 'package:portfolio/config/theme/extensions.dart';
 import 'package:portfolio/presentation/widgets/app_bar_drawer.dart';
+import 'package:portfolio/presentation/widgets/large_app_menus.dart';
 
 class MyAppBar extends StatelessWidget {
   const MyAppBar({super.key});
@@ -11,7 +12,7 @@ class MyAppBar extends StatelessWidget {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 200),
       alignment: Alignment.center,
-      color: Theme.of(context).appBarTheme.backgroundColor,
+      color: context.theme.appBarTheme.backgroundColor,
       height: context.padding.appBarHight,
       padding: EdgeInsets.symmetric(horizontal: context.padding.padding),
       child: ConstrainedBox(
@@ -20,7 +21,7 @@ class MyAppBar extends StatelessWidget {
           children: [
             AppLogo(),
             Spacer(),
-            if (context.isDesktop) AppMenus(),
+            if (context.isDesktop) LargeAppMenus(),
             Spacer(),
             ThemeToggle(),
             if (!context.isDesktop) AppBarDrawer(),
@@ -37,22 +38,6 @@ class AppLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text('portfolio', style: context.textStyle.titleLgBold);
-  }
-}
-
-class AppMenus extends StatelessWidget {
-  const AppMenus({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text('Home'),
-        Text('EDU/Certificates'),
-        Text('Commercial Experience'),
-        Text('Portfolio'),
-      ],
-    );
   }
 }
 
