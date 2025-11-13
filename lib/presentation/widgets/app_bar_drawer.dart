@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/domain/entities/app_menu_item.dart';
 
 class AppBarDrawer extends StatefulWidget {
-  const AppBarDrawer({super.key});
+  const AppBarDrawer({super.key, required this.list});
+
+  final List<AppMenuItem> list;
+  //TODO доделать дровер с меню
+  // list
+  //         .map(
+  //           (e) =>
+  //               // TODO доделать бул и онтап
+  //               LargeAppMenuItem(label: e.title, onTap: () {}, isActive: false),
+  //         )
+  //         .toList(),
 
   @override
   State<AppBarDrawer> createState() => _AppBarDrawerState();
