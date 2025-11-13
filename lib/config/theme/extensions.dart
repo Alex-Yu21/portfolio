@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/config/theme/app_sizes.dart';
 import 'package:portfolio/config/theme/app_text_styles.dart';
 
 enum DeviceTipe { mobile, tablet, desktop }
@@ -14,7 +15,7 @@ extension StyledContext on BuildContext {
     } else if (wigth < 900) {
       return DeviceTipe.tablet;
     } else {
-      return DeviceTipe.mobile;
+      return DeviceTipe.desktop;
     }
   }
 
@@ -29,6 +30,15 @@ extension StyledContext on BuildContext {
         return SmallTextStyles();
       case DeviceTipe.desktop:
         return LargeTextStyles();
+    }
+  }
+
+  AppPaddings get padding {
+    switch (deviceTipe) {
+      case DeviceTipe.mobile:
+      case DeviceTipe.tablet:
+      case DeviceTipe.desktop:
+        return LargePaddings();
     }
   }
 }
