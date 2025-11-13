@@ -8,6 +8,7 @@ extension StyledContext on BuildContext {
   MediaQueryData get mg => MediaQuery.of(this);
   double get wigth => mg.size.width;
   double get heigth => mg.size.height;
+  ThemeData get theme => Theme.of(this);
 
   DeviceTipe get deviceTipe {
     if (wigth < 600) {
