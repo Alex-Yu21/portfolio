@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/theme/app_text_styles.dart';
+import 'package:portfolio/config/theme/app_text_styles.dart';
 
 enum DeviceTipe { mobile, tablet, desktop }
 
@@ -22,7 +22,7 @@ extension StyledContext on BuildContext {
   bool get isTablet => deviceTipe == DeviceTipe.tablet;
   bool get isDesktop => deviceTipe == DeviceTipe.desktop;
 
-  AppTextStyles get textStyles {
+  AppTextStyles get textStyle {
     switch (deviceTipe) {
       case DeviceTipe.mobile:
       case DeviceTipe.tablet:
