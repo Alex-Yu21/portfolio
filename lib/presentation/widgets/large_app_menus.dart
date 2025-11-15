@@ -40,8 +40,8 @@ class LargeAppMenuItem extends StatelessWidget {
       onTap: onTap,
       child: Container(
         padding: EdgeInsets.symmetric(
-          horizontal: Insests.mid,
-          vertical: Insests.xs,
+          horizontal: Insets.mid,
+          vertical: Insets.xs,
         ),
         child: Text(label, style: SmallTextStyles().bodyLgMedium),
       ),

@@ -20,7 +20,7 @@ class MyAppBar extends StatelessWidget {
       height: context.padding.appBarHight,
       padding: EdgeInsets.symmetric(horizontal: context.padding.padding),
       child: ConstrainedBox(
-        constraints: BoxConstraints(maxWidth: Insests.maxWidth),
+        constraints: BoxConstraints(maxWidth: Insets.maxWidth),
         child: Row(
           children: [
             AppLogo(),
