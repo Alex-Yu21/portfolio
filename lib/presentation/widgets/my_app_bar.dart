@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/config/routes/app_routes.dart';
+import 'package:portfolio/config/shared/extensions.dart';
 import 'package:portfolio/config/theme/app_sizes.dart';
-import 'package:portfolio/config/theme/extensions.dart';
 import 'package:portfolio/domain/entities/app_menu_item.dart';
 import 'package:portfolio/presentation/widgets/app_bar_drawer.dart';
 import 'package:portfolio/presentation/widgets/large_app_menus.dart';
+import 'package:portfolio/presentation/widgets/theme_toggle.dart';
 
 class MyAppBar extends StatelessWidget {
   const MyAppBar({super.key});
@@ -42,15 +43,6 @@ class AppLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text('portfolio', style: context.textStyle.titleLgBold);
-  }
-}
-
-class ThemeToggle extends StatelessWidget {
-  const ThemeToggle({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Switch(value: false, onChanged: null);
   }
 }
 
