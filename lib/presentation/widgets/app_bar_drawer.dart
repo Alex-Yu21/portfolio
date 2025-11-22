@@ -6,24 +6,14 @@ import 'package:portfolio/config/theme/app_text_styles.dart';
 import 'package:portfolio/domain/entities/app_menu_item.dart';
 import 'package:portfolio/presentation/providers/drawer_menu_controller.dart';
 
-class AppBarDrawer extends StatefulWidget {
-  const AppBarDrawer({super.key, required this.list});
-
-  final List<AppMenuItem> list;
-  //TODO доделать дровер с меню
-  // list
-  //         .map(
-  //           (e) =>
-  //               // TODO доделать бул и онтап
-  //               LargeAppMenuItem(label: e.title, onTap: () {}, isActive: false),
-  //         )
-  //         .toList(),
+class AppBarDrawerIcon extends ConsumerStatefulWidget {
+  const AppBarDrawerIcon({super.key});
 
   @override
-  State<AppBarDrawer> createState() => _AppBarDrawerState();
+  ConsumerState<AppBarDrawerIcon> createState() => _AppBarDrawerState();
 }
 
-class _AppBarDrawerState extends State<AppBarDrawer>
+class _AppBarDrawerState extends ConsumerState<AppBarDrawerIcon>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
@@ -47,8 +37,10 @@ class _AppBarDrawerState extends State<AppBarDrawer>
         setState(() {
           if (_isOpen) {
             _controller.forward();
+            ref.read(drawerMenuControllerProvider.notifier).open();
           } else {
             _controller.reverse();
+            ref.read(drawerMenuControllerProvider.notifier).close();
           }
           _isOpen = !_isOpen;
         });
@@ -93,21 +85,23 @@ class _DrawerMenuState extends ConsumerState<DrawerMenu>
         _controller.reverse();
       }
     });
-    return SlideTransition(
-      position: _animation,
-      child: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: context.theme.colorScheme.surface,
-          boxShadow: [
-            BoxShadow(
-              color: context.theme.colorScheme.surface.withOpacity(0.4),
-              blurRadius: 6,
-              spreadRadius: 3,
-            ),
-          ],
+    return ClipRect(
+      child: SlideTransition(
+        position: _animation,
+        child: Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: context.theme.colorScheme.surface,
+            boxShadow: [
+              BoxShadow(
+                color: context.theme.colorScheme.surface.withOpacity(0.4),
+                blurRadius: 6,
+                spreadRadius: 3,
+              ),
+            ],
+          ),
+          child: SmallMenu(list: widget.list),
         ),
-        child: SmallMenu(list: widget.list),
       ),
     );
   }

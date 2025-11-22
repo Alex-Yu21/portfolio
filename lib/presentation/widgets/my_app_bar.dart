@@ -31,7 +31,7 @@ class MyAppBar extends StatelessWidget {
                 if (context.isDesktop) LargeAppMenus(list: menuItems),
                 Spacer(),
                 ThemeToggle(),
-                if (!context.isDesktop) AppBarDrawer(list: menuItems),
+                if (!context.isDesktop) AppBarDrawerIcon(),
               ],
             ),
           ),
