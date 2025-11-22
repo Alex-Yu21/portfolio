@@ -14,25 +14,30 @@ class MyAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final menuItems = AppMenusList.getItems(context);
 
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 200),
-      alignment: Alignment.center,
-      color: context.theme.appBarTheme.backgroundColor,
-      height: context.padding.appBarHight,
-      padding: EdgeInsets.symmetric(horizontal: context.padding.padding),
-      child: ConstrainedBox(
-        constraints: BoxConstraints(maxWidth: Insets.maxWidth),
-        child: Row(
-          children: [
-            AppLogo(),
-            Spacer(),
-            if (context.isDesktop) LargeAppMenus(list: menuItems),
-            Spacer(),
-            ThemeToggle(),
-            if (!context.isDesktop) AppBarDrawer(list: menuItems),
-          ],
+    return Column(
+      children: [
+        AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          alignment: Alignment.center,
+          color: context.theme.appBarTheme.backgroundColor,
+          height: context.padding.appBarHight,
+          padding: EdgeInsets.symmetric(horizontal: context.padding.padding),
+          child: ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: Insets.maxWidth),
+            child: Row(
+              children: [
+                AppLogo(),
+                Spacer(),
+                if (context.isDesktop) LargeAppMenus(list: menuItems),
+                Spacer(),
+                ThemeToggle(),
+                if (!context.isDesktop) AppBarDrawer(list: menuItems),
+              ],
+            ),
+          ),
         ),
-      ),
+        if (!context.isDesktop) DrawerMenu(list: menuItems),
+      ],
     );
   }
 }
