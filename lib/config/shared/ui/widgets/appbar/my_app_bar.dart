@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/config/routes/app_routes.dart';
 import 'package:portfolio/config/shared/extensions.dart';
+import 'package:portfolio/config/shared/ui/widgets/appbar/app_bar_drawer.dart';
+import 'package:portfolio/config/shared/ui/widgets/appbar/large_app_menus.dart';
+import 'package:portfolio/config/shared/ui/widgets/appbar/theme_toggle.dart';
 import 'package:portfolio/config/theme/app_sizes.dart';
-import 'package:portfolio/core/ui/widgets/appbar/app_bar_drawer.dart';
-import 'package:portfolio/core/ui/widgets/appbar/large_app_menus.dart';
-import 'package:portfolio/core/ui/widgets/appbar/theme_toggle.dart';
 import 'package:portfolio/domain/entities/app_menu_item.dart';
 
 class MyAppBar extends StatelessWidget {
