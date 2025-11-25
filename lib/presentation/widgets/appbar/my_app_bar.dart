@@ -3,9 +3,9 @@ import 'package:portfolio/config/routes/app_routes.dart';
 import 'package:portfolio/config/shared/extensions.dart';
 import 'package:portfolio/config/theme/app_sizes.dart';
 import 'package:portfolio/domain/entities/app_menu_item.dart';
-import 'package:portfolio/presentation/widgets/app_bar_drawer.dart';
-import 'package:portfolio/presentation/widgets/large_app_menus.dart';
-import 'package:portfolio/presentation/widgets/theme_toggle.dart';
+import 'package:portfolio/presentation/widgets/appbar/app_bar_drawer.dart';
+import 'package:portfolio/presentation/widgets/appbar/large_app_menus.dart';
+import 'package:portfolio/presentation/widgets/appbar/theme_toggle.dart';
 
 class MyAppBar extends StatelessWidget {
   const MyAppBar({super.key});
