@@ -2,7 +2,8 @@ class Insets {
   static double get xs => 4;
   static double get mid => 12;
   static double get xl => 24;
-  static const maxWidth = 1200.0;
+  static double get xxxl => 80;
+  static const maxWidth = 1280.0;
 }
 
 abstract class AppPaddings {
