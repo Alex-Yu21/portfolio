@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/config/shared/extensions.dart';
 import 'package:portfolio/config/theme/app_sizes.dart';
 import 'package:portfolio/config/theme/app_text_styles.dart';
+import 'package:portfolio/core/ui/providers/drawer_menu_controller.dart';
 import 'package:portfolio/domain/entities/app_menu_item.dart';
-import 'package:portfolio/presentation/providers/drawer_menu_controller.dart';
 
 class AppBarDrawerIcon extends ConsumerStatefulWidget {
   const AppBarDrawerIcon({super.key});
