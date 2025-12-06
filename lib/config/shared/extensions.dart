@@ -4,6 +4,14 @@ import 'package:portfolio/config/theme/app_text_styles.dart';
 
 enum DeviceTipe { mobile, tablet, desktop }
 
+class AppTexts {
+  String get home => 'Home';
+  String get edu => 'EDU/Certificates';
+  String get exp => 'Commercial Experience';
+  String get portfolio => 'Portfolio';
+  String get cooperationRequest => '??';
+}
+
 extension StyledContext on BuildContext {
   MediaQueryData get mg => MediaQuery.of(this);
   double get width => mg.size.width;
@@ -23,6 +31,7 @@ extension StyledContext on BuildContext {
   bool get isMobile => deviceTipe == DeviceTipe.mobile;
   bool get isTablet => deviceTipe == DeviceTipe.tablet;
   bool get isDesktop => deviceTipe == DeviceTipe.desktop;
+  bool get isDesktopOrTablet => isDesktop || isTablet;
 
   AppTextStyles get textStyle {
     switch (deviceTipe) {
@@ -42,4 +51,6 @@ extension StyledContext on BuildContext {
         return LargePaddings();
     }
   }
+
+  AppTexts get texts => AppTexts();
 }

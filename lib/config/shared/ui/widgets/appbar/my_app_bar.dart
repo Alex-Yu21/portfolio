@@ -54,10 +54,10 @@ class AppLogo extends StatelessWidget {
 class AppMenusList {
   static List<AppMenuItem> getItems(BuildContext context) {
     return [
-      AppMenuItem(title: 'Home', path: Routes.home),
-      AppMenuItem(title: 'EDU/Certificates', path: Routes.edu),
-      AppMenuItem(title: 'Commercial Experience', path: Routes.experience),
-      AppMenuItem(title: 'Portfolio', path: Routes.portfolio),
+      AppMenuItem(title: context.texts.home, path: Routes.home),
+      AppMenuItem(title: context.texts.edu, path: Routes.edu),
+      AppMenuItem(title: context.texts.exp, path: Routes.experience),
+      AppMenuItem(title: context.texts.portfolio, path: Routes.portfolio),
     ];
   }
 }
