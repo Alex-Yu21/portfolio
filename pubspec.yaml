@@ -28,7 +28,7 @@ flutter:
 
   assets:
     - assets/
-    - assers/images/main.jpg
+    - assets/images/main.jpg
 
   fonts:
     - family: Poppins
