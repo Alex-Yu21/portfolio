@@ -9,7 +9,11 @@ class AppTexts {
   String get edu => 'EDU/Certificates';
   String get exp => 'Commercial Experience';
   String get portfolio => 'Portfolio';
-  String get cooperationRequest => '??';
+  String get cooperationRequest => 'Contact Me';
+  String get me => 'Alex Yu';
+  String get mobileDev => 'Mobile App Developer';
+  String get summaryBS =>
+      'Mobile developer with over a year of experience. Proficient in Flutter with a strong technical background and a passion for building elegant, user-focused mobile applications.';
 }
 
 extension StyledContext on BuildContext {
